@@ -11,11 +11,14 @@ This project serves to quickly set up a scriptable object that will automaticall
 &nbsp;
 
 ## Usage
+### ⚠️**This project requires the FBX Exporter package** 
+##### *(Official Unity package available in the Unity Registry from the Package Manager tool in Unity).*
+-----
 The whole thing is quite simple to use. An example is available in the project.
 
 To use the project, you have to make two scripts:
 
- - The first one will contain the attribute data. It must have the [System.Serializable] attribute and implement the IMeshAttributes interface. Then, put the variables you want to extract from the FBX file.
+ - The first one will contain the attribute data. It must have the **[System.Serializable]** attribute and implement the **IMeshAttributes** interface. Then, put the variables you want to extract from the FBX file.
 
 ```csharp
 //Simplified example on purpose - See the FbxMeshExample.cs script for more details
@@ -39,7 +42,7 @@ public class MyFbxMeshAttributes : IMeshAttributes
 ```
 &nbsp;
  - The second class is the scriptable object which will contain a list of instances of the previous class and will be automatically generated. 
-It must have the attribute FbxAttribute(string filenameFilter) and inherit from FbxScriptableObject<MyFbxMeshAttributes>.
+It must have the attribute **FbxAttribute(string filenameFilter)** and inherit from **FbxScriptableObject\<MyFbxMeshAttributes\>**.
 
 ```csharp
 [FbxAttribute("Tile", suffix = "_Attributes")]
@@ -50,3 +53,31 @@ public class MyFbxObject : FbxScriptableObject<MyFbxMeshAttributes>
 The filenameFilter is used to indicate which objects should have a postImport on them. Only objects containing the filter will be processed. You can use regex functions.
   
 The suffix is optional, it is used to add a suffix to the generated file, this can easily avoid clashes.
+
+&emsp;
+-----
+&emsp;
+
+In your second script. You can access the data with the variable **childs**.
+
+You can also override the **OnPostImport()** function which is called after each update of the object.
+
+```csharp
+[FbxAttribute("Tile", suffix = "_Attributes")]
+public class MyFbxObject : FbxScriptableObject<MyFbxMeshAttributes>
+{
+    public void LogAllChildsNameAndColor()
+    {
+        foreach (var child in childs)
+        {
+            Debug.Log($"Mesh {child.mesh.name} is {child.myColor}");
+        }
+    }
+
+    public override void OnPostImport()
+    {
+        Debug.Log("This object has just been updated");
+    }
+}
+```
+
