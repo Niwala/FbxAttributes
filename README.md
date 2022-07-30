@@ -10,13 +10,13 @@ This allow you to set up a scriptable object that will automatically receive the
 ## Application
 
 I use this technique in a procedural generation.<br/>
-*(The parts of the castle are from [KattyLi's 3D model on sketchfab](https://sketchfab.com/3d-models/3-medieval-towers-8b509574fc8a442fa88ed85506bcb416))*
+*The parts of the castle are from [KattyLi's 3D model on sketchfab](https://sketchfab.com/3d-models/3-medieval-towers-8b509574fc8a442fa88ed85506bcb416)*<br/><br/>
 ![Unity result](Media/Image_05.jpg?raw=true)
 
 The terrain above is procedurally generated using the tiles below.
-I created these tiles in Maya and put attributes on them with information allowing the generation algorithm to place them in the right place.<br/>
+I created these tiles in Maya and put attributes on them with information allowing the generation algorithm to place them in the right place.<br/><br/>
 ![Maya tiles](Media/Image_03.png?raw=true)<br/>
-![Maya attributes](Media/Image_04.png?raw=true)<br/>
+![Maya attributes](Media/Image_04.png?raw=true)<br/><br/>
 The creation time is greatly optimized. After I finished my export from Maya, a simple focus on the Unity application triggers the reimport of the model, its attributes and restarts the generation of the terrain. I can then directly see the result of my modification / new part.<br/>
 
 &nbsp;
