@@ -1,12 +1,23 @@
 # Fbx Attributes
-Small utility scripts to easily extract attributes from FBX file meshes and get them into unity.
+Small utility scripts to easily extract attributes from FBX file meshes and get them into unity.</br>
+This allow you to set up a scriptable object that will automatically receive the attributes of an FBX mesh.
 
-![Maya & Unity Example](Media/Image_01.png?raw=true)
+![Maya & Unity Example](Media/Image_01.png)
+![Unity Import](Media/Image_02.gif)
 
-This project serves to quickly set up a scriptable object that will automatically receive the attributes of an FBX mesh.
-(During procedural generation for example, it allows to add a lot of meta-data on the different Meshes.)
+&nbsp;
 
-![Maya & Unity Example](Media/Image_02.gif?raw=true)
+## Application
+
+I use this technique in a procedural generation.<br/>
+*(The parts of the castle are from [KattyLi's 3D model on sketchfab](https://sketchfab.com/3d-models/3-medieval-towers-8b509574fc8a442fa88ed85506bcb416))*
+![Unity result](Media/Image_05.jpg?raw=true)
+
+The terrain above is procedurally generated using the tiles below.
+I created these tiles in Maya and put attributes on them with information allowing the generation algorithm to place them in the right place.<br/>
+![Maya tiles](Media/Image_03.png?raw=true)<br/>
+![Maya attributes](Media/Image_04.png?raw=true)<br/>
+The creation time is greatly optimized. After I finished my export from Maya, a simple focus on the Unity application triggers the reimport of the model, its attributes and restarts the generation of the terrain. I can then directly see the result of my modification / new part.<br/>
 
 &nbsp;
 
