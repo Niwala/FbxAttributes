@@ -92,3 +92,15 @@ public class MyFbxObject : FbxScriptableObject<MyFbxMeshAttributes>
 }
 ```
 
+&emsp;
+## Maya helpers
+
+Setting attributes on Maya is sometimes a bit painful, the interface does not allow to create all types and the setup can be long.<br/>
+So I created a new shelf that you can get in<br/>
+```Maya\self_Attributes```<br/>
+and copy in your folder :<br/>
+```C:\Users\[UserName]\Documents\maya[Version]\prefs\shelves\```
+
+![Maya tiles](Media/Image_06.png?raw=true)<br/>
+
+This allows you to create attributes more quickly and copy them from one object to another.
