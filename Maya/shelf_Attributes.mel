@@ -1,0 +1,356 @@
+global proc shelf_Attributes () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Bool Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Bool Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Bool" 
+        -overlayLabelColor 0.90604 0.90604 0.90604 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Bool',\n                message='Enter a name for a bool attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, attributeType='bool')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Float Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Float Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Float" 
+        -overlayLabelColor 0.892617 0.892617 0.892617 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Float',\n                message='Enter a name for a float attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, attributeType='float')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Int Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Int Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Int" 
+        -overlayLabelColor 0.926175 0.926175 0.926175 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Integer',\n                message='Enter a name for a integer attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, attributeType='long')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Enum Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Enum Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Enum" 
+        -overlayLabelColor 0.946309 0.946309 0.946309 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Enum',\n                message='Enter a name for an enum attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    \n    text = cmds.promptDialog(query=True, text=True)\n    enumPrompt = cmds.promptDialog(\n                title='Enum',\n                message='Enter the different choices here. Use the : character between each choice',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\n    if enumPrompt == 'OK':\n        names = cmds.promptDialog(query=True, text=True)\n        objs = cmds.ls( orderedSelection=True )\n    \n        for obj in objs:\n            if not cmds.attributeQuery(text, node=obj, ex=True):\n                cmds.addAttr(obj, longName=text, attributeType='enum', enumName=names)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Vector Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Vector Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Vector" 
+        -overlayLabelColor 0.899329 0.899329 0.899329 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Vector',\n                message='Enter a name for a vector attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, usedAsColor=False, attributeType='float3')\n            cmds.addAttr( longName=text + '_X', attributeType='float', parent=text )\n            cmds.addAttr( longName=text + '_Y', attributeType='float', parent=text )\n            cmds.addAttr( longName=text + '_Z', attributeType='float', parent=text )" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 0
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add a color attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Color Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Color" 
+        -overlayLabelColor 0.865772 0.865772 0.865772 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Color',\n                message='Enter a name for a color attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, usedAsColor=True, attributeType='float3')\n            cmds.addAttr( longName=text + '_red', attributeType='float', parent=text )\n            cmds.addAttr( longName=text + '_green', attributeType='float', parent=text )\n            cmds.addAttr( longName=text + '_blue', attributeType='float', parent=text )\n                    " 
+        -sourceType "python" 
+        -commandRepeatable 0
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add String Attribute" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add String Attribute" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "String" 
+        -overlayLabelColor 0.899329 0.899329 0.899329 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "annotationShape.svg" 
+        -image1 "annotationShape.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.promptDialog(\n                title='Color',\n                message='Enter a name for a color attribute',\n                button=['OK', 'Cancel'],\n                defaultButton='OK',\n                cancelButton='Cancel',\n                dismissString='Cancel')\n\nif result == 'OK':\n    text = cmds.promptDialog(query=True, text=True)\n    objs = cmds.ls( orderedSelection=True )\n    \n    for obj in objs:\n        if not cmds.attributeQuery(text, node=obj, ex=True):\n            cmds.addAttr( longName=text, dt='string')\n                    " 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 2
+        -flexibleWidthValue 22
+        -enable 1
+        -width 22
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Separator" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0 
+        -image "branch-vline.svg" 
+        -image1 "branch-vline.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"User defined macro\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 0
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Copy attributes" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Copy Attributes" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Copy" 
+        -overlayLabelColor 0.872483 0.872483 0.872483 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "envFog.svg" 
+        -image1 "envFog.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.ls( orderedSelection=True )\nsource = result[0]\nattrList = cmds.listAttr(source, ud=True)\nif attrList is None :\n    attrList = []\n\n#Add all the necessary attributes if they are not present.\n\nfor attr in attrList:\n        \n    ln = cmds.attributeQuery(attr, node=source, ln=True)\n    sn = cmds.attributeQuery(attr, node=source, sn=True)\n    at = cmds.attributeQuery(attr, node=source, at=True)\n    uac = cmds.attributeQuery(attr, node=source, uac=True)\n    lp =  cmds.attributeQuery(attr, node=source, lp=True)\n    enum = cmds.attributeQuery(attr, node=source, enum=True)\n    en =  cmds.attributeQuery(attr, node=source, listEnum=True)\n   \n    for obj in result:\n        \n        if source == obj or cmds.attributeQuery(attr, node=obj, ex=True):\n            continue\n        \n        if lp:\n            cmds.addAttr(obj, ln=ln, sn=sn, at=at, uac=uac, p=lp[0])\n        elif enum:\n            cmds.addAttr(obj, ln=ln, sn=sn, at=at, uac=uac, en=en[0])\n        else:\n            cmds.addAttr(obj, ln=ln, sn=sn, at=at, uac=uac)\n        \n        #if at=='float3':\n        #    continue\n        \nfor obj in result:\n    cmds.copyAttr(source,obj,values=True, attribute=attrList)\n            " 
+        -sourceType "python" 
+        -commandRepeatable 0
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 0
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Clear Attributes" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Clear Attributes" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Clear" 
+        -overlayLabelColor 0.885906 0.885906 0.885906 
+        -overlayLabelBackColor 0.15015 0.220121 0.35 1 
+        -image "deleteActive.png" 
+        -image1 "deleteActive.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nresult = cmds.ls( selection=True )\n\nfor obj in result:\n        \n    attrList = cmds.listAttr(obj, ud=True)\n    if attrList is None :\n        attrList = []\n    \n    for attr in attrList:\n        print(attr)\n        if cmds.attributeQuery(attr, node=obj, ex=True):\n            cmds.deleteAttr(obj + '.' + attr)" 
+        -sourceType "python" 
+        -commandRepeatable 0
+        -flat 1
+    ;
+
+} 
