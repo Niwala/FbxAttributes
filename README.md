@@ -2,10 +2,13 @@
 Small utility scripts to easily extract attributes from FBX file meshes and get them into unity.</br>
 This allow you to set up a scriptable object that will automatically receive the attributes of an FBX mesh.
 
-<!--#Include<div class="horizontalLayout">-->
+<!--<div class="horizontalLayout">-->
 ![Maya & Unity Example](Media/Image_01.png)
+<!--<div class="verticalLayout">-->
+<!--<div class="space"></div>-->
 ![Unity Import](Media/Image_02.gif)
-<!--#Include</div>-->
+<!--</div>-->
+<!--</div>-->
 
 &nbsp;
 
